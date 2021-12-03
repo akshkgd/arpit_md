@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand fw-bolder" style="color: blueviolet;" href="#">CK Food</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link" href="/orders">All Orders</a>
+            </div>
+          </div>
+        </div>
+      </nav>   
+<div class="container mt-5">
+    <div class="row">
+        <div class="card">
+            <div class="card-boy"><div class="p-3">
+                <h3 class="">Total Orders</h3>
+            </div>
+    
+                <table class="table table-responsive-lg">
+                    
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Province</th>
+                        <th scope="col">Postal Code</th>
+                        <th scope="col">Green salad</th>
+                        <th scope="col">Pizza</th>
+                        <th scope="col">Delivery Time</th>
+                      </tr>
+                    
+                    
+                        <%records.forEach(function (purchase) {%>
+                        <tr>
+                            <td scope="row"> <%= purchase.name%> </td>
+                            <td scope="row"> <%= purchase.email%> </td>
+                            <td scope="row"> <%= purchase.mobile%> </td>
+                            <td scope="row"> <%= purchase.address%> </td>
+                            <td scope="row"> <%= purchase.city%> </td>
+                            <td scope="row"> <%= purchase.province%> </td>
+                            <td scope="row"> <%= purchase.postalCode%> </td>
+                            <td scope="row"> <%= purchase.product1%> </td>
+                            <td scope="row"> <%= purchase.product2%> </td>
+                            <td scope="row"> <%= purchase.delivery%> </td>
+                            
+                          </tr>  
+                          <% })%>
+                      
+                    
+                </table>
+            </div>
+          </div>
+    </div>
+</div>
+    
+
+   
+</body>
+</html>

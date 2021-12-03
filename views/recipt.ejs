@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        .card-img-top{
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        .card{
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand fw-bolder" style="color: blueviolet;" href="#">CK Food</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link" href="/orders">All Orders</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="alert alert-success">Hi, <strong><%=data.name%></strong>  Your Order has been placed successfully!</div>
+                <div class="card ">
+                    <div class="">
+                        <table class="table table-responsive-lg">
+                            <tr class="">
+                                <td class="fw-bold">Name</td><td></td>
+                                <td><%=data.name%></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td><td></td>
+                                <td><%=data.email%></td>
+                            </tr>
+                            <tr>
+                                <td>Phone</td><td></td>
+                                <td><%=data.phone%></td>
+                            </tr>
+                            <tr>
+                                <td>Address</td><td></td>
+                                <td><%=data.address%></td>
+                            </tr>
+                            <tr>
+                                <td>City</td><td></td>
+                                <td><%=data.city%></td>
+                            </tr>
+                            <tr>
+                                <td>Total Pizza</td>
+                                <td><%=data.product1%></td>
+                                <td><%=data.product2*5%></td>
+                            </tr>
+                            <tr>
+                                <td>Total Salad</td>
+                                <td><%=data.product2%></td>
+                                <td><%= data.product1*15%></td>
+                            </tr>
+                            <tr>
+                                <td>Shiping Charge</td>
+                                <td></td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>Sub Total</td>
+                                <td></td>
+                                <td><%= (data.product2*5)+(data.product1*15)+20 %></td>
+                            </tr>
+                            <tr>
+                                <td>Tax - 13%</td>
+                                <td></td>
+                                <td><%= ((data.product2*5)+(data.product1*15)+20)*13/100 %></td>
+                            </tr>
+                                <tr style="border-bottom: none;">
+                                    <td><h3>Total</h3></td>
+                                    <td></td>
+                                    <td> <h3> <%=((data.product2*5)+(data.product1*15)+20)+(((data.product2*5)+(data.product1*15)+20)*13/100)%></h3></td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
