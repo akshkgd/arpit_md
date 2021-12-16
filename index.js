@@ -1,3 +1,4 @@
+
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -7,7 +8,7 @@ const Purchase = require('./models/purchase');
 app.set ('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 console.log(Purchase);
-mongoose.connect('mongodb+srv://ash:nuttertools@nexttest.lljlg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://aksb:nuttertools12365@nexttest.lljlg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 
 // serving products page
 app.get('/', (req, res) => {
@@ -20,6 +21,7 @@ app.get('/checkout', (req, res) => {
 })
 app.post('/api/create', async(req, res, next) => {
     const record = req.body;
+    
     console.log('record', record); 
     const purchase = await Purchase.create(record);
     console.log('purchase', purchase);
@@ -39,6 +41,22 @@ app.get('/orders', async(req, res) => {
     console.log('records', records);
     res.render('purchase', {records: records});
 });
+
+app.post('/orders/delete', async(req, res) => {
+    Purchase.findByIdAndRemove(req.params.id, (err) => {
+        if (err) {
+            console.log(err);
+          res.redirect("/orders");
+        } else {
+            console.log("Successfully deleted");
+          res.redirect("/orders");
+        }
+      });
+});
+
+
+
+
 // starting the server
 app.use(bodyParser.json())
 app.listen(3000, () => {

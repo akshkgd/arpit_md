@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,30 +35,27 @@
                     
                       <tr>
                         <th scope="col">Name</th>
-                        <th scope="col">Email</th>
                         <th scope="col">Mobile</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">City</th>
-                        <th scope="col">Province</th>
-                        <th scope="col">Postal Code</th>
-                        <th scope="col">Green salad</th>
-                        <th scope="col">Pizza</th>
-                        <th scope="col">Delivery Time</th>
+                        <th scope="col">strawberry Juice</th>
+                        <th scope="col">Watermelon Juice</th>
+                        <th scope="col">orange Juice</th>
+                        <th>Action</th>
                       </tr>
                     
                     
                         <%records.forEach(function (purchase) {%>
                         <tr>
                             <td scope="row"> <%= purchase.name%> </td>
-                            <td scope="row"> <%= purchase.email%> </td>
-                            <td scope="row"> <%= purchase.mobile%> </td>
-                            <td scope="row"> <%= purchase.address%> </td>
-                            <td scope="row"> <%= purchase.city%> </td>
-                            <td scope="row"> <%= purchase.province%> </td>
-                            <td scope="row"> <%= purchase.postalCode%> </td>
-                            <td scope="row"> <%= purchase.product1%> </td>
-                            <td scope="row"> <%= purchase.product2%> </td>
-                            <td scope="row"> <%= purchase.delivery%> </td>
+                            <td scope="row"> <%= purchase.phone%> </td>
+                            <td scope="row"> <%= purchase.strawberryJuices%> </td>
+                            <td scope="row"> <%= purchase.watermelonJuices%> </td>
+                            <td scope="row"> <%= purchase.orangeJuices%> </td>
+                            <td>
+                        <form id="delete-form" class="d-inline" action="/orders/delete?id=<%= purchase._id%>" method="POST">
+                          <input type="hidden" name="_method" value="PUT"/>
+                            <button class="btn card-link btn-danger">Delete</button>
+                        </form>
+                            </td>
                             
                           </tr>  
                           <% })%>

@@ -43,51 +43,37 @@
                                 <td class="fw-bold">Name</td><td></td>
                                 <td><%=data.name%></td>
                             </tr>
-                            <tr>
-                                <td>Email</td><td></td>
-                                <td><%=data.email%></td>
-                            </tr>
+                        
                             <tr>
                                 <td>Phone</td><td></td>
                                 <td><%=data.phone%></td>
                             </tr>
-                            <tr>
-                                <td>Address</td><td></td>
-                                <td><%=data.address%></td>
+                            
+                                <td>Total strawberry Juice</td>
+                                <td><%=data.strawberryJuices%></td>
+                                <td><%=data.strawberryJuices*3.89%></td>
                             </tr>
                             <tr>
-                                <td>City</td><td></td>
-                                <td><%=data.city%></td>
+                                <td>Total Watermelon Juice</td>
+                                <td><%=data.watermelonJuices%></td>
+                                <td><%= data.watermelonJuices*2.99%></td>
                             </tr>
                             <tr>
-                                <td>Total Pizza</td>
-                                <td><%=data.product1%></td>
-                                <td><%=data.product2*5%></td>
+                                <td>Total Orange Juice</td>
+                                <td><%=data.orangeJuices%></td>
+                                <td><%= data.orangeJuices*4.79%></td>
                             </tr>
-                            <tr>
-                                <td>Total Salad</td>
-                                <td><%=data.product2%></td>
-                                <td><%= data.product1*15%></td>
-                            </tr>
-                            <tr>
-                                <td>Shiping Charge</td>
-                                <td></td>
-                                <td>20</td>
-                            </tr>
-                            <tr>
-                                <td>Sub Total</td>
-                                <td></td>
-                                <td><%= (data.product2*5)+(data.product1*15)+20 %></td>
-                            </tr>
+                            
+                            
                             <tr>
                                 <td>Tax - 13%</td>
                                 <td></td>
-                                <td><%= ((data.product2*5)+(data.product1*15)+20)*13/100 %></td>
+                                <td><%= ((data.strawberryJuices*3.89)+(data.watermelonJuices*2.99) + (data.orangeJuices*4.79))*13/100 %></td>
                             </tr>
                                 <tr style="border-bottom: none;">
                                     <td><h3>Total</h3></td>
                                     <td></td>
-                                    <td> <h3> <%=((data.product2*5)+(data.product1*15)+20)+(((data.product2*5)+(data.product1*15)+20)*13/100)%></h3></td>
+                                    <td> <h3> <%=(((data.strawberryJuices*3.89)+(data.watermelonJuices*2.99) + (data.orangeJuices*4.79)) + ((data.strawberryJuices*3.89)+(data.watermelonJuices*2.99) + (data.orangeJuices*4.79 *13/100)))%></h3></td>
                                 </tr>
                         </table>
                     </div>
